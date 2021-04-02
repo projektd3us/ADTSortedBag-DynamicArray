@@ -71,7 +71,7 @@ void SortedBag::add(TComp e) {
 			}
 		}
 	}
-} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
+} // All cases Theta(1) - added to complexity of used fucntion makeplace
 
 
 bool SortedBag::remove(TComp e) {
