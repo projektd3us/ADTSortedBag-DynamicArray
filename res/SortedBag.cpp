@@ -8,14 +8,14 @@ void SortedBag::makePlace(int pos) { // function to make place in array for addi
 	for (int i = this->nrOfElem - 1; i >= pos; i--) { //counting down preventing override
 		this->arr[i + 1] = this->arr[i]; // shift right
 	}
-}
+} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 void SortedBag::remPlace(int pos) { // function to remove item at pos in array
 	for (int i = pos; i <= this->nrOfElem - 2; i++) {
 		this->arr[i] = this->arr[i + 1]; // shift right
 	}
-}
+} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 SortedBag::SortedBag(Relation r) {
@@ -26,7 +26,7 @@ SortedBag::SortedBag(Relation r) {
 }
 
 
-void SortedBag::add(TComp e) { // fuck whomever thought this was a good idea
+void SortedBag::add(TComp e) {
 	if (this->isEmpty()) { // if empty then pass
 		this->nrOfElem++;
 		this->arr[0] = e;
@@ -71,8 +71,7 @@ void SortedBag::add(TComp e) { // fuck whomever thought this was a good idea
 			}
 		}
 	}
-}
-// Best case:Theta(1), Worst case:Theta(nrOfElem - 1)
+} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 bool SortedBag::remove(TComp e) {
@@ -84,7 +83,7 @@ bool SortedBag::remove(TComp e) {
 		}
 	}
 	return false;
-}
+} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 bool SortedBag::search(TComp elem) const {
@@ -94,7 +93,7 @@ bool SortedBag::search(TComp elem) const {
 		}
 	}
 	return false; // nothing found
-}
+} // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 int SortedBag::nrOccurrences(TComp elem) const {
@@ -105,13 +104,12 @@ int SortedBag::nrOccurrences(TComp elem) const {
 		}
 	}
 	return cont;
-}
+}  // Best case:Theta(1), Worst case:Theta(n) = Average Case, General case = O(n)
 
 
 int SortedBag::size() const {
 	return this->nrOfElem;
-}
-
+}  // All cases:Theta(1)
 
 bool SortedBag::isEmpty() const {
 	if (this->nrOfElem != 0) {
@@ -120,7 +118,7 @@ bool SortedBag::isEmpty() const {
 	else {
 		return true;
 	}
-}
+}  // All cases:Theta(1)
 
 
 SortedBagIterator SortedBag::iterator() const {
@@ -130,7 +128,7 @@ SortedBagIterator SortedBag::iterator() const {
 
 SortedBag::~SortedBag() {
 	delete[] this->arr;
-}
+}  // All cases:Theta(1)
 
 
 void SortedBag::printSortedBag() const {
@@ -139,4 +137,4 @@ void SortedBag::printSortedBag() const {
 	for (int i = 0; i <= this->nrOfElem - 1; i++) {
 		cout << this->arr[i] << ", ";
 	}
-}
+}  // All cases:Theta(1)
